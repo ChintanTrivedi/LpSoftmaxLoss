@@ -85,4 +85,4 @@ def train_resnet(dataset, logdir, num_epochs=50, order='l2', radius='ur', run_ex
                                        validation_data=validation_ds)
 
         # log training history
-        # json.dump(train_history.history, open(f"{logdir}/th_rn5_{order}_{radius}_run{run_exp}.json", 'w'), indent=4)
+        json.dump(train_history.history, open(f"{logdir}/th_rn5_{order}_{radius}_run{run_exp}.json", 'w'), indent=4)
