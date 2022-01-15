@@ -28,8 +28,7 @@ def main():
     print(f'Results will be saved at this path: {save_directory}')
 
     if model == 'rn5':
-        train_resnet(dataset, run_exp_count=5, order='l2', radius='lr', logdir=save_directory)
-        train_resnet(dataset, run_exp_count=5, order='ll', radius='lr', logdir=save_directory)
+        train_resnet(dataset, run_exp_count=5, order=order, radius=radius, logdir=save_directory)
     elif model == 'ef0':
         train_efficientnet(dataset, run_exp_count=5, order=order, radius=radius, logdir=save_directory)
     elif model == 'vit':
@@ -38,7 +37,7 @@ def main():
 
 def plot():
     # select dataset
-    dataset_name = list_of_datasets[5]['name']
+    dataset_name = list_of_datasets[0]['name']
     assert dataset_name in list_available_datasets()  # use with argparse
 
     # select model
@@ -51,4 +50,4 @@ def plot():
 
 if __name__ == "__main__":
     main()
-    # plot()
+    plot()
